@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="erl-Ay-vzk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="erl-Ay-vzk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,24 +35,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="34H-5Z-g7I">
-                                <rect key="frame" x="70" y="72" width="180" height="267"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TNE-KX-Kgb">
+                                <rect key="frame" x="16" y="76" width="288" height="431"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="34H-5Z-g7I">
+                                        <rect key="frame" x="54" y="0.0" width="180" height="267"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="FdO-gG-LMe"/>
+                                            <constraint firstAttribute="width" secondItem="34H-5Z-g7I" secondAttribute="height" multiplier="0.675:1" id="XFl-U6-PSw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Die Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e22-dm-thQ">
+                                        <rect key="frame" x="111" y="267" width="66" height="19.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome Director" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5L-er-odI">
+                                        <rect key="frame" x="85" y="286.5" width="118" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBw-Le-omk">
+                                        <rect key="frame" x="5" y="303.5" width="278.5" height="82.5"/>
+                                        <string key="text">This is a lengthy movie summary. This is a lengthy movie summary. This is a lengthy movie summary. This is a lengthy movie summary. </string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhI-by-Dj6">
+                                        <rect key="frame" x="59" y="386" width="170" height="45"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Change Movie"/>
+                                        <connections>
+                                            <action selector="didTapChangeMovieButton:" destination="UmB-MY-kVW" eventType="touchUpInside" id="RNE-ma-axt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="FdO-gG-LMe"/>
-                                    <constraint firstAttribute="width" secondItem="34H-5Z-g7I" secondAttribute="height" multiplier="0.675:1" id="XFl-U6-PSw"/>
+                                    <constraint firstAttribute="bottom" secondItem="34H-5Z-g7I" secondAttribute="bottom" constant="76" id="vuz-7u-Dt3"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" fixedFrame="YES" text="Die Hard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e22-dm-thQ">
-                                <rect key="frame" x="127" y="361" width="66" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vuz-7u-Dt3"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leading" id="1hN-IK-wRL"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="4OX-TC-Yrf"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="8AQ-lv-DD8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNE-KX-Kgb" secondAttribute="trailing" id="9zJ-JY-LvC"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="Bel-5c-UMc"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="FTK-Hc-9SR"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="GtA-cc-fUP"/>
+                            <constraint firstAttribute="trailing" secondItem="TNE-KX-Kgb" secondAttribute="trailing" id="MDV-Up-gte"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="RFu-YW-iIR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNE-KX-Kgb" secondAttribute="trailing" id="UqQ-Cm-dEe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNE-KX-Kgb" secondAttribute="trailing" id="fO3-Oc-BLU"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="top" secondItem="6pi-k3-xIb" secondAttribute="topMargin" id="i99-OM-Tyv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNE-KX-Kgb" secondAttribute="trailing" id="oq5-Gt-AP6"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="q7Y-FS-HPR"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="qEQ-7R-gyo"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="top" secondItem="6pi-k3-xIb" secondAttribute="topMargin" constant="76" id="wwQ-vQ-IZg"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="z89-vy-naP"/>
+                            <constraint firstItem="TNE-KX-Kgb" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="zPF-gb-zZZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1hN-IK-wRL"/>
+                                <exclude reference="4OX-TC-Yrf"/>
+                                <exclude reference="8AQ-lv-DD8"/>
+                                <exclude reference="Bel-5c-UMc"/>
+                                <exclude reference="GtA-cc-fUP"/>
+                                <exclude reference="MDV-Up-gte"/>
+                                <exclude reference="RFu-YW-iIR"/>
+                                <exclude reference="UqQ-Cm-dEe"/>
+                                <exclude reference="fO3-Oc-BLU"/>
+                                <exclude reference="i99-OM-Tyv"/>
+                                <exclude reference="oq5-Gt-AP6"/>
+                                <exclude reference="q7Y-FS-HPR"/>
+                                <exclude reference="qEQ-7R-gyo"/>
+                                <exclude reference="z89-vy-naP"/>
+                                <exclude reference="zPF-gb-zZZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="d6g-H4-cgH"/>
                     <connections>
+                        <outlet property="directorLabel" destination="h5L-er-odI" id="HnA-di-xXA"/>
+                        <outlet property="posterImageView" destination="34H-5Z-g7I" id="tcz-H2-ppj"/>
+                        <outlet property="summaryLabel" destination="EBw-Le-omk" id="MVl-mH-osW"/>
                         <outlet property="titleLabel" destination="e22-dm-thQ" id="glB-fz-X5i"/>
                     </connections>
                 </viewController>

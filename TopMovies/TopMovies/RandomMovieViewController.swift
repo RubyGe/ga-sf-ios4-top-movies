@@ -32,11 +32,16 @@ class RandomMovieViewController: UIViewController {
     //
     
     @IBOutlet weak var titleLabel: UILabel?
-    
-    
+    @IBOutlet weak var directorLabel: UILabel?
+    @IBOutlet weak var summaryLabel: UILabel?
+    @IBOutlet weak var posterImageView: UIImageView?
+//IBOutlet allow your code to communicate with the interface
+//IBAuction allows your interface to communicate with your code
     //
     // Put IBOutlets Above This Line
     //
+    
+
     
     var movies: [NSDictionary]?
     
@@ -61,6 +66,21 @@ class RandomMovieViewController: UIViewController {
     //
     
     
+    @IBAction func didTapChangeMovieButton(sender: AnyObject) {
+        let max = self.movies!.count - 1
+        let randomNumber = self.randomIntegerWithMinimum(0, andMaximum: max)
+        let title = self.titleStringForMovieAtIndex(randomNumber)
+        let director = self.directorStringForMovieAtIndex(randomNumber)
+        let summary = self.summaryStringForMovieAtIndex(randomNumber)
+        self.titleLabel?.text = title  /*? if this variable is nil, skip this line*/
+        self.directorLabel?.text = director
+        self.summaryLabel?.text = summary
+        
+        let posterImageURL = self.posterImageURLForMovieAtIndex(randomNumber)
+        
+        self.posterImageView?.image=nil
+        self.posterImageView?.setImageWithURL(posterImageURL)
+    }
     
     //
     // Put IBAction Above This Line
